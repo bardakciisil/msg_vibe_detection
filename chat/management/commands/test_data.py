@@ -2,8 +2,6 @@ from django.core.management.base import BaseCommand
 from chat.models import Message
 
 class Command(BaseCommand):
-    help = 'Create test data for the chat application'
-
     def handle(self, *args, **kwargs):
         # Test messages
         test_messages = [
