@@ -5,7 +5,7 @@ from textblob import TextBlob
 
 def analyse_vibe(text):
     blob = TextBlob(text)
-    return blob.sentiment.polarity  # the value returns between [-1,1] -1->(negative) 1->(positive)
+    return blob.sentiment.polarity  # the val returns [-1,1] - :( +:)
 
 def chat(request):
     if 'session_id' not in request.session:
