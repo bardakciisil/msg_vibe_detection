@@ -26,7 +26,7 @@ def chat(request):
 
     # NLP analysis
     vibes = [analyse_vibe(msg.content) for msg in messages]
-    #merge messages and vibe lists with zip
+    #merge messages and vibe lists
     message_vibes = zip(messages, vibes)
 
     return render(request, 'chat/chat.html', {
