@@ -32,14 +32,13 @@
             border-radius: 8px;
             max-width: 75%;
             clear: both;
+            color: #000;
         }
         .my-message {
-            background-color: #e1ffc7;
             margin-left: auto;
             text-align: right;
         }
         .other-message {
-            background-color: #f1f1f1;
             margin-right: auto;
             text-align: left;
         }
@@ -82,10 +81,12 @@
     <h1>Chat</h1>
 
     <div id="chat-box">
-        {% for message, sentiment in message_vibes%}
-            <div class="message {% if message.sender_id == request.session.session_id %}my-message{% else %}other-message{% endif %}">
+        {% for message, sentiment in message_vibes %}
+            <div class="message 
+                {% if message.sender_id == request.session.session_id %}my-message{% else %}other-message{% endif %}"
+                style="background-color: {{ message.color }};">
                 {{ message.content }}<br>
-                <small>Sender: {{ message.sender_id }} | Sentiment: {{ sentiment }}</small>
+                <small, style="color: #4c4c4c;">Sender: {{ message.sender_id }} | Sentiment: {{ sentiment }}</small>
             </div>
         {% endfor %}
     </div>
